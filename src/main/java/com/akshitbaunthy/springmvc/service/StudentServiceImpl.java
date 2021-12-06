@@ -55,7 +55,6 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    @Transactional
     public Student findById(int id) {
         Transaction tx = session.beginTransaction();
         Student student = session.get(Student.class, id);
