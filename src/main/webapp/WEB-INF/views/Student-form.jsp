@@ -20,7 +20,7 @@
 				<h3>Student Directory</h3>
 				<hr>
 
-				<p class="h4 mb-4">Book</p>
+				<p class="h4 mb-4">Student details</p>
 
 				<form action="/spring-mvc/students/insert" method="POST">
 
