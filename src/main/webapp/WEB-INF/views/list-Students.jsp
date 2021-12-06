@@ -60,10 +60,9 @@
 			</tbody>
 		</table>
 
-			<!-- Add a button -->
+		<!-- Add a button -->
 		<form action="/spring-mvc/students/showFormForAdd" class="form-inline">
-			<button type="submit" class="btn btn-success btn-sm style="margin-left:5">Add
-				Student</button>
+			<button type="submit" class="btn btn-success btn-sm">Add Student</button>
 		</form>
 
 	</div>
