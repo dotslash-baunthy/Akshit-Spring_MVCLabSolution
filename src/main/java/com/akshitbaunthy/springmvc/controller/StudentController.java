@@ -58,7 +58,6 @@ public class StudentController {
 	public String insertStudent(@RequestParam("id") int id, @RequestParam("name") String name,
 			@RequestParam("department") String department, @RequestParam("country") String country) {
 
-
 		Student fetchedStudent;
 		if (id != 0) {
 			fetchedStudent = studentService.findById(id);

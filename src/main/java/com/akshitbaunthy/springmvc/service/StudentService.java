@@ -9,8 +9,11 @@ import java.util.List;
 public interface StudentService {
 
     void insert(Student student);
+
     void delete(int id);
+
     List<Student> printAll();
+
     Student findById(int id);
 
 }

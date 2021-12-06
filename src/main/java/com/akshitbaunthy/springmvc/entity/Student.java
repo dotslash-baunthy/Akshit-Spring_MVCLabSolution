@@ -6,24 +6,24 @@ import javax.persistence.*;
 @Table(name = "Student")
 public class Student {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
-    private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "Id")
+	private int id;
 
-    @Column(name = "Name")
-    private String name;
+	@Column(name = "Name")
+	private String name;
 
-    @Column(name = "Department")
-    private String department;
+	@Column(name = "Department")
+	private String department;
 
-    @Column(name = "Country")
-    private String country;
+	@Column(name = "Country")
+	private String country;
 
-    public int getId() {
-    	return id;
-    }
-    
+	public int getId() {
+		return id;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -47,12 +47,12 @@ public class Student {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	
+
 	public Student() {
 		super();
 	}
-    
-    public Student(int id, String name, String department, String country) {
+
+	public Student(int id, String name, String department, String country) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -61,10 +61,10 @@ public class Student {
 	}
 
 	public Student(String name, String department, String country) {
-        super();
-        this.name = name;
-        this.department = department;
-        this.country = country;
-    }
+		super();
+		this.name = name;
+		this.department = department;
+		this.country = country;
+	}
 
 }
