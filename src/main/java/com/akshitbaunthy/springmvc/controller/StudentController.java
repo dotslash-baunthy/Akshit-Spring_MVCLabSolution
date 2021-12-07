@@ -19,68 +19,73 @@ public class StudentController {
 	@Autowired
 	private StudentService studentService;
 
+	// Endpoint to get all students in the table
 	@RequestMapping("/list")
 	public String listStudents(Model model) {
-		List<Student> students = studentService.printAll();
+		List<Student> students = studentService.getAll();
 
 		model.addAttribute("Students", students);
 
 		return "list-Students";
 	}
 
+	// Endpoint to show form for inserting new student
 	@RequestMapping("/showFormForAdd")
 	public String showFormForAdd(Model theModel) {
 
-		// get the Student from the service
+		// Get the Student from the service
 
 		Student student = new Student();
-		// set Book as a model attribute to pre-populate the form
+		// Set Student as a model attribute to pre-populate the form
 		theModel.addAttribute("Student", student);
 
-		// send over to our form
+		// Send over to student form
 		return "Student-form";
 	}
 
+	// Endpoint to show form for updating old student
 	@RequestMapping("/showFormForUpdate")
 	public String showFormForUpdate(@RequestParam("id") int id, Model model) {
 
-		// get the Student from the service
-		Student fetchedStudent = studentService.findById(id);
+		// Get the Student from the service
+		Student fetchedStudent = studentService.getById(id);
 
-		// set Book as a model attribute to pre-populate the form
+		// Set Student as a model attribute to pre-populate the form
 		model.addAttribute("Student", fetchedStudent);
 
-		// send over to our form
+		// Send over to student form
 		return "Student-form";
 	}
 
+	// Endpoint for updating old student or inserting old student based on whether the ID passed in the argument is 0 or not
 	@PostMapping("/insert")
 	public String insertStudent(@RequestParam("id") int id, @RequestParam("name") String name,
 			@RequestParam("department") String department, @RequestParam("country") String country) {
 
 		Student fetchedStudent;
 		if (id != 0) {
-			fetchedStudent = studentService.findById(id);
+			fetchedStudent = studentService.getById(id);
 			fetchedStudent.setName(name);
 			fetchedStudent.setDepartment(department);
 			fetchedStudent.setCountry(country);
 		} else
 			fetchedStudent = new Student(name, department, country);
-		// save the Student
+		// Save the Student
 		studentService.insert(fetchedStudent);
 
-		// use a redirect to prevent duplicate submissions
+		// Use a redirect to prevent duplicate submissions
 		return "redirect:/students/list";
 
 	}
 
+	// Endpoint for deleting existing student
 	@RequestMapping("/delete")
 	public String delete(@RequestParam("id") int id) {
 
-		// delete the Book
+		// Delete the Student
 		studentService.delete(id);
 
-		// redirect to /Books/list
+		// Redirect to /students/list
 		return "redirect:/students/list";
 
 	}
