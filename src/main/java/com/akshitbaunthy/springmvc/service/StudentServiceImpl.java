@@ -38,6 +38,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     @Transactional
+    // Function that is called by /delete, this does the actual deletion
     public void delete(int id) {
         Transaction tx = session.beginTransaction();
         Student student = session.get(Student.class, id);
@@ -47,7 +48,8 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public List<Student> printAll() {
+    // Function that is called by /list, this does the actual listing
+    public List<Student> getAll() {
         Transaction tx = session.beginTransaction();
         List<Student> students = session.createQuery("from Student").list();
         tx.commit();
@@ -55,7 +57,8 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Student findById(int id) {
+    // Function that is called by /insert (in case of update), this does the finding part (get by ID, as the name suggests)
+    public Student getById(int id) {
         Transaction tx = session.beginTransaction();
         Student student = session.get(Student.class, id);
         tx.commit();

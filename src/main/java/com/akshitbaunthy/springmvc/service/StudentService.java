@@ -12,8 +12,8 @@ public interface StudentService {
 
     void delete(int id);
 
-    List<Student> printAll();
+    List<Student> getAll();
 
-    Student findById(int id);
+    Student getById(int id);
 
 }
