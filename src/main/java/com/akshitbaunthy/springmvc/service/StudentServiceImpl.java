@@ -49,9 +49,9 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<Student> printAll() {
         Transaction tx = session.beginTransaction();
-        List<Student> books = session.createQuery("from Student").list();
+        List<Student> students = session.createQuery("from Student").list();
         tx.commit();
-        return books;
+        return students;
     }
 
     @Override

@@ -34,7 +34,7 @@ public class StudentController {
 		// get the Student from the service
 
 		Student student = new Student();
-		// set Book as a model attribute to pre-populate the form
+		// set Student as a model attribute to pre-populate the form
 		theModel.addAttribute("Student", student);
 
 		// send over to our form
@@ -47,7 +47,7 @@ public class StudentController {
 		// get the Student from the service
 		Student fetchedStudent = studentService.findById(id);
 
-		// set Book as a model attribute to pre-populate the form
+		// set Student as a model attribute to pre-populate the form
 		model.addAttribute("Student", fetchedStudent);
 
 		// send over to our form
@@ -77,10 +77,10 @@ public class StudentController {
 	@RequestMapping("/delete")
 	public String delete(@RequestParam("id") int id) {
 
-		// delete the Book
+		// delete the Student
 		studentService.delete(id);
 
-		// redirect to /Books/list
+		// redirect to /students/list
 		return "redirect:/students/list";
 
 	}
