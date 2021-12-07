@@ -22,7 +22,6 @@
 
 				<p class="h4 mb-4">Student details</p>
 
-				<!-- Form action onSubmit() is to insert student -->
 				<form action="/spring-mvc/students/insert" method="POST">
 
 					<!-- Add hidden form field to handle update -->

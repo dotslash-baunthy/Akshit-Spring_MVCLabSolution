@@ -66,7 +66,7 @@
 					</tbody>
 				</table>
 
-				<!-- Form action on submit is to show form for addition of student -->
+				<!-- Add a button -->
 				<form action="/spring-mvc/students/showFormForAdd" class="form-inline">
 					<button type="submit" class="btn btn-success btn-sm">Add Student</button>
 				</form>
