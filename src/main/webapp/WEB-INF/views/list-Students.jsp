@@ -51,10 +51,8 @@
 								</td>
 								<td>
 									<!-- Add "update" button/link --> <a
-										href="/spring-mvc/students/showFormForUpdate?id=${tempStudent.id}"
-										class="btn btn-info btn-sm"> Update </a> <!-- Add "delete" button/link -->
+										href="/spring-mvc/students/showFormForUpdate?id=${tempStudent.id}"> Update </a> <!-- Add "delete" button/link -->
 									<a href="/spring-mvc/students/delete?id=${tempStudent.id}"
-										class="btn btn-danger btn-sm"
 										onclick="if (!(confirm('Are you sure you want to delete this Student?'))) return false">
 										Delete </a>
 
@@ -68,7 +66,7 @@
 
 				<!-- Form action on submit is to show form for addition of student -->
 				<form action="/spring-mvc/students/showFormForAdd" class="form-inline">
-					<button type="submit" class="btn btn-success btn-sm">Add Student</button>
+					<button type="submit" >Add Student</button>
 				</form>
 
 			</div>
